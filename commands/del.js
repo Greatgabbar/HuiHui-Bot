@@ -1,6 +1,7 @@
 module.exports={
     name : 'del',
     discription : 'Delete the message you want to enter',
+    usage : "!del <amount>",
     execute(message,args){
         const amount = parseInt(args[0])+1;
 
