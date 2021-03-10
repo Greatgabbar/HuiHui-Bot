@@ -1,3 +1,6 @@
+require('dotenv').config();
+const prefix=process.env.prefix;
+
 module.exports={
     name : 'help',
     discription : 'Show all the available commanads with discription',
@@ -5,8 +8,8 @@ module.exports={
     aliases:["h"],
     execute(message,args){
         const data=[];
+        const commands=message.client.commands;
         if(!args.length){
-            const commands=message.client.commands;
             data.push('Here\'s a list of all my commands:');
             data.push(commands.map(command => `${command.name}`).join('\n'));
             data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
@@ -29,7 +32,8 @@ module.exports={
 
         if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
         if (command.description) data.push(`**Description:** ${command.description}`);
-        if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
+        if (command.usage) data.push(`**Usage:** ${command.usage}`);
+        console.log(`**Usage:** ${command.usage}`)
 
         data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
