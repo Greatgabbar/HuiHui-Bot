@@ -7,7 +7,7 @@ module.exports=(client)=>{
         .on('trackStart', (message, track) => {
            console.log(track);
            const msg= new Discord.MessageEmbed()
-            .setColor('#0099ff')
+            .setColor('#FFA500')
             .setTitle(`Now playing ${track.title}...`)
             .setURL(`${track.url}`)
             .setAuthor(`${track?.author}`)
@@ -19,7 +19,13 @@ module.exports=(client)=>{
         })
         
         // Send a message when something is added to the queue
-        .on('trackAdd', (message, queue, track) => message.channel.send(`${track.title} has been added to the queue!`))
+        .on('trackAdd', (message, queue, track) => {
+            const msg= new Discord.MessageEmbed()
+            .setColor('#FFA500')
+            .setTitle(`${track.title} added to queue`)
+            .setURL(`${track.url}`)
+            return message.channel.send(msg);
+    })
         .on('playlistAdd', (message, queue, playlist) => message.channel.send(`${playlist.title} has been added to the queue (${playlist.tracks.length} songs)!`))
         
         // Send messages to format search results

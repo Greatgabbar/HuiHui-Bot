@@ -5,6 +5,7 @@ const client = new Discord.Client();
 const {Player}=require('discord-player');
 client.player =  new Player(client);
 client.commands = new Discord.Collection();
+client.filters = process.env.filters;
 const cooldowns = new Discord.Collection();
 const prefix = process.env.prefix;
 require('./event')(client);

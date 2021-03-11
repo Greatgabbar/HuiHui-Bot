@@ -13,7 +13,6 @@ module.exports={
        if(!args){
         return message.reply(`You Have to provide song link!`);
        }
-       console.log(args);
     //    const voiceChannel= await message.member.voice.channel;
     //    const connection= await voiceChannel.join();
     //    await console.log(message.client.voice.connections);
@@ -30,6 +29,6 @@ module.exports={
     //     })
         
     //     dispatcher.on('error',console.error);
-            message.client.player.play(message,args.join(' '),true);
+          return message.client.player.play(message,args.join(' '),true);
     }
 }
