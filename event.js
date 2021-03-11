@@ -1,8 +1,22 @@
+const Discord = require("discord.js");
+
 module.exports=(client)=>{
         client.player
         
         // Send a message when a track starts
-        .on('trackStart', (message, track) => message.channel.send(`Now playing ${track.title}...`))
+        .on('trackStart', (message, track) => {
+           console.log(track);
+           const msg= new Discord.MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle(`Now playing ${track.title}...`)
+            .setURL(`${track.url}`)
+            .setAuthor(`${track?.author}`)
+            .setThumbnail(`${track.thumbnail}`)
+            .setFooter(`views :- ${track.views} , Requested By : ${track.requestedBy.username}`,'https://cdn.discordapp.com/avatars/816994233557844039/c261a88ff85eee96010919fc8fe1b1e7.png')
+            return message.channel.send(msg).then((data)=>{
+                return data.react(`👍`);
+            });
+        })
         
         // Send a message when something is added to the queue
         .on('trackAdd', (message, queue, track) => message.channel.send(`${track.title} has been added to the queue!`))
