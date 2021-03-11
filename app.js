@@ -2,20 +2,13 @@ require('dotenv').config();
 const fs= require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const {Player}=require('discord-player');
+client.player =  new Player(client);
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 const prefix = process.env.prefix;
+require('./event')(client);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-// const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-
-// for (const file of eventFiles) {
-// 	const event = require(`./events/${file}`);
-// 	if (event.once) {
-// 		client.once(event.name, (...args) => event.execute(...args,client));
-// 	} else {
-// 		client.on(event.name, (...args) => event.execute(...args,client));
-// 	}
-// }
 
 //adding the set {commamnd_name , command_data} to the commands collection
 for (const file of commandFiles) {
@@ -60,8 +53,7 @@ client.on('message',async (message) => {
     }
     timestamps.set(message.author.id, date);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-    // --------------- not checked yet have to check the validity of the above cooldow poart --------------
-    
+    // --------------- not checked yet have to check the validity of the above cooldow poart -------------
     
     try {
         command.execute(message, args);
