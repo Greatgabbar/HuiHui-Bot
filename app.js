@@ -1,13 +1,20 @@
-require('dotenv').config();
 const fs= require('fs');
+const mongoose = require('mongoose');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const {Player}=require('discord-player');
 client.player =  new Player(client);
 client.commands = new Discord.Collection();
-client.filters = process.env.filters;
 const cooldowns = new Discord.Collection();
+require('dotenv').config();
 const prefix = process.env.prefix;
+mongoose.connect(process.env.dburl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }).then(()=>{
+      console.log('connected')
+  });
+
 require('./event')(client);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 

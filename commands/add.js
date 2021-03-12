@@ -6,18 +6,10 @@ module.exports={
     discription : 'Sets currently playing music duration',
     usage : "!add/a <name> <link>",
     execute(message,args){
-        if (!message.member.voice.channel) {
-            return message.reply(`You Have to be in the voice channel to use this command !`);
-       }
-
-    if(!message.guild.me.voice.channel){
-        return message.reply(`I am not in any Voice channel use !play to invite me!`);
-    }
-    if(!args.length){
+    if(args.length <= 1){
         return message.reply(`Command usage ${this.usage}`);
     }
-    const track=message.client.player.nowPlaying(message);
-    User.findOne({id : track.requestedBy.id}).then((data)=>{
+    User.findOne({id : message.author.id}).then((data)=>{
         if(data){
             data.playlist.push({name : args[0] ,link: args[1]});
             return data.save().then((gg)=>{
