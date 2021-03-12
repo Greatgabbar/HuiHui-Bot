@@ -17,6 +17,7 @@ module.exports={
         }else{
             msg={
                 color : '#FFA500',
+                title : `${data.name}'s playlist`,
                 fields : data.playlist.map((data,i)=>{
                     return {
                         name : data.name,

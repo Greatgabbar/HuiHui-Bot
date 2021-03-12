@@ -11,7 +11,10 @@ const userSchema= new Schema({
     },
     playlist : [
         {
-            name : String,
+            name : {
+                type : String,
+                Unique : true
+            },
             link : String
         }
     ]
