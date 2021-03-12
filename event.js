@@ -24,7 +24,9 @@ module.exports=(client)=>{
             .setColor('#FFA500')
             .setTitle(`${track.title} added to queue`)
             .setURL(`${track.url}`)
-            return message.channel.send(msg);
+            return message.channel.send(msg).then((data)=>{
+                return data.react(`👍`);
+            });
     })
         .on('playlistAdd', (message, queue, playlist) => message.channel.send(`${playlist.title} has been added to the queue (${playlist.tracks.length} songs)!`))
         
@@ -52,6 +54,20 @@ module.exports=(client)=>{
         .on('noResults', (message, query) => message.channel.send(`No results found on YouTube for ${query}!`))
         
         // Send a message when the music is stopped
-        .on('queueEnd', (message, queue) => message.channel.send('Music stopped as there is no more music in the queue!'))
-        .on('channelEmpty', (message, queue) => message.channel.send('Music stopped as there is no more member in the voice channel!'))
+        .on('queueEnd', (message, queue) => {
+            const msg= new Discord.MessageEmbed()
+            .setColor('#FFA500')
+            .setTitle(`Need Money if u want me to join Voice channel for 24x7 🙃`)
+            return message.channel.send(msg).then((data)=>{
+                return data.react(`👍`);
+            }); 
+        })
+        .on('channelEmpty', (message, queue) => {
+            const msg= new Discord.MessageEmbed()
+            .setColor('#FFA500')
+            .setTitle(`I am leaving Voice Channel , I dont want to be alone! 🥺`)
+            return message.channel.send(msg).then((data)=>{
+                return data.react(`👍`);
+            });    
+        })
 }

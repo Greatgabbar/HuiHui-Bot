@@ -30,8 +30,8 @@ module.exports={
                 // { name: 'Filters activated', value: filters.length + '/' + message.client.filters.length, inline: true },
 
                 { name: 'Volume', value: message.client.player.getQueue(message).volume, inline: true },
-                { name: 'Repeat mode', value: message.client.player.getQueue(message).repeatMode ? 'Yes' : 'No', inline: true },
-                { name: 'Currently paused', value: message.client.player.getQueue(message).paused ? 'Yes' : 'No', inline: true },
+                // { name: 'Repeat mode', value: message.client.player.getQueue(message).repeatMode ? 'Yes' : 'No', inline: true },
+                // { name: 'Currently paused', value: message.client.player.getQueue(message).paused ? 'Yes' : 'No', inline: true },
 
                 { name: 'Progress bar', value: message.client.player.createProgressBar(message, { timecodes: true }), inline: true }
             ],
