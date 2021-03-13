@@ -5,7 +5,6 @@ module.exports=(client)=>{
         
         // Send a message when a track starts
         .on('trackStart', (message, track) => {
-           console.log(track);
            const msg= new Discord.MessageEmbed()
             .setColor('#FFA500')
             .setTitle(`Now playing ${track.title}...`)

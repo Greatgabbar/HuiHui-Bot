@@ -64,7 +64,7 @@ client.on('message',async (message) => {
     // --------------- not checked yet have to check the validity of the above cooldow poart -------------
     
     try {
-        command.execute(message, args);
+        command.execute(message, args,client);
     } catch (error) {
         console.error(error);
 	    message.reply('there was an error trying to execute that command!');

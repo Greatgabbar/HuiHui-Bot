@@ -2,10 +2,10 @@ const ytdl = require('ytdl-core-discord');
 
 module.exports={
     name : 'play',
-    discription : 'play the perticular source in your voice channel',
+    discription : 'play the perticular song in your voice channel',
     usage : "!play <link>",
     aliases:["p"],
-    execute : async (message,args)=>{
+    execute : async (message,args,client)=>{
         if (!message.member.voice.channel) {
             return message.reply(`You Have to be in the voice channel to use this command !`);
        }
@@ -29,6 +29,6 @@ module.exports={
     //     })
         
     //     dispatcher.on('error',console.error);
-          return message.client.player.play(message,args.join(' '),true);
+          return client.player.play(message,args.join(' '),true);
     }
 }
