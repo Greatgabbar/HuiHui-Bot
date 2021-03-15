@@ -23,7 +23,10 @@ module.exports={
         const msg=new Discord.MessageEmbed()
             .setColor('#FFA500')
             .setTitle(`Removed ${track.title} Successfully`)
-        return message.channel.send(msg);
+        return message.channel.send(msg).catch(err=>{
+            console.log('Err',err.message);
+           return message.reply(`Reason : ${err.message}`)
+        });
 
     }
 }

@@ -29,6 +29,9 @@ module.exports={
     //     })
         
     //     dispatcher.on('error',console.error);
-          return client.player.play(message,args.join(' '),true);
+          return client.player.play(message,args.join(' '),true).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
     }
 }

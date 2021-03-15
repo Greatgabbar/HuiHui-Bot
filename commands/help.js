@@ -37,6 +37,9 @@ module.exports={
 
         data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
-        message.channel.send(data, { split: true });
+        message.channel.send(data, { split: true }).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
     }
 }

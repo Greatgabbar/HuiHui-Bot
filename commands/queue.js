@@ -33,7 +33,10 @@ module.exports={
                     return hh;
                 })
             )
-        return message.channel.send(msg);
+        return message.channel.send(msg).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
 
     }
 }

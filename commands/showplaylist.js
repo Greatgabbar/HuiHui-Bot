@@ -28,6 +28,9 @@ module.exports={
         }
         return message.channel.send({embed : msg}).then(data=>{
             return data.react(`👍`);
+        }).catch(err=>{
+            console.log('Err',err.message);
+           return message.reply(`Reason : ${err.message}`)
         });
     })
     }

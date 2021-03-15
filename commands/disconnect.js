@@ -24,6 +24,9 @@ module.exports={
             .setTitle("Disconnected Successfully!")
         message.channel.send(msg).then(data=>{
             return data.react(`👍`);
-        })
+        }).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
     }
 }

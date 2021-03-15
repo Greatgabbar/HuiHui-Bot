@@ -14,6 +14,9 @@ module.exports={
             return data.react(`👍`);
         }) : message.channel.send(`There is a problem in Pausing the music`).then(data=>{
             return data.react(`👎`);
-        })
+        }).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
     }
 }

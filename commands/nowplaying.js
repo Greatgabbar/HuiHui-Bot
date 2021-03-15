@@ -38,6 +38,9 @@ module.exports={
             thumbnail: { url: track.thumbnail },
             timestamp: new Date(),
         }
-    })
+    }).catch(err=>{
+        console.log('Err',err.message);
+        message.reply(`Reason : ${err.message}`)
+    });
 }
 }

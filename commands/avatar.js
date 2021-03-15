@@ -11,6 +11,9 @@ module.exports={
         const tagList=message.mentions.users.map((data)=>{
             return `Avatar : ${data.displayAvatarURL({format:'png',dynamic:true})}`
         })
-        message.channel.send(tagList);
+        message.channel.send(tagList).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
     }
 }

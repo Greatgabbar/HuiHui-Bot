@@ -9,8 +9,8 @@ module.exports={
 		    return message.reply('that doesn\'t seem to be a valid number.');
 	    }
         message.channel.bulkDelete(amount,true).catch(err=>{
-            console.log('Err',err);
-            message.reply(`There Was An Error Deleing zthe Meassages`)
+            console.log('Err',err.message);
+            message.reply(`There Was An Error Deleing zthe Meassages Reason : ${err.message}`)
         })
     }
 }

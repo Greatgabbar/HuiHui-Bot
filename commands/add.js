@@ -37,6 +37,9 @@ module.exports={
             .setTitle(`Playlist Saved SuccessFully`)
                 return message.channel.send(msg).then(data=>{
                     return data.react(`👍`);
+                }).catch(err=>{
+                    console.log('Err',err.message);
+                    message.reply(`Reason : ${err.message}`)
                 });
             })
     })

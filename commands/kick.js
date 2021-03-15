@@ -8,6 +8,9 @@ module.exports={
         }
         const taggedUser=message.mentions.users.first();
         console.log(taggedUser);
-        message.channel.send(`You Are trying to kick ${taggedUser.username}`);
+        message.channel.send(`You Are trying to kick ${taggedUser.username}`).catch(err=>{
+            console.log('Err',err.message);
+            message.reply(`Reason : ${err.message}`)
+        });
     }
 }

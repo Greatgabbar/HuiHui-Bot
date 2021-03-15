@@ -53,6 +53,9 @@ module.exports={
             };
             return message.channel.send({embed : msg}).then(data=>{
                 return data.react(`👍`);
+            }).catch(err=>{
+                console.log('Err',err.message);
+                message.reply(`Reason : ${err.message}`)
             });
         }
     }).catch(err=>{
