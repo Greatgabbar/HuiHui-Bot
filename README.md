@@ -16,7 +16,7 @@
 
 ## 💻 What The Heck is HuiHui
 
-- <p style="color: red;">HuiHui is a free Discord music bot written in js using discord.js that delivers high-quality music to your Discord server. The music bot is made to be easy plug in to your Discord server with no configuration. 
+- <p style="color: red;">HuiHui is a free Discord music bot written in js using discord.js that delivers high-quality music to your Discord server. The music bot is made to be easy plug in to your Discord server with no configuration. And you can save your playlist link with bot and no need to add manually evrytime, just add it once and you are done.
  
 
 ## 🎵 Music commands
