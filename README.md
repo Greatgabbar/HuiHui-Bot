@@ -51,7 +51,7 @@ debug, see number of voice connections.
 
 ## 💻 Getting started
 
-- For Quick Demo Just Click here and invite to your server
+- For Quick Demo Just [Click here]('https://discord.com/oauth2/authorize?client_id=816994233557844039&scope=bot') and invite to your server
 
 ### Requirements
 
