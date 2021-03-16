@@ -8,7 +8,11 @@ client.player =  new Player(client);
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 require('dotenv').config();
-const server=http.createServer();
+const server=http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World');
+  });
 const prefix = process.env.prefix;
 mongoose.connect(process.env.dburl, {
     useNewUrlParser: true,
