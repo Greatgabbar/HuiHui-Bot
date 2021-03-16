@@ -1,12 +1,14 @@
 const fs= require('fs');
 const mongoose = require('mongoose');
 const Discord = require('discord.js');
+const http=require('http');
 const client = new Discord.Client();
 const {Player}=require('discord-player');
 client.player =  new Player(client);
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 require('dotenv').config();
+const server=http.createServer();
 const prefix = process.env.prefix;
 mongoose.connect(process.env.dburl, {
     useNewUrlParser: true,
@@ -72,3 +74,4 @@ client.on('message',async (message) => {
     
 });
 client.login(process.env.TOKEN);
+server.listen(process.env.PORT||3000);
