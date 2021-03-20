@@ -11,11 +11,9 @@ module.exports={
             return message.reply(`You Have to be in the voice channel to use this command !`);
        }
        const track=message.client.player.nowPlaying(message);
-       console.log(track);
        fetch(`https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?apikey=${key}&q_track=${track.title}&q_artist=${track.author}`)
        .then(res=>res.json())
        .then(data=>{
-           console.log(data);
            if(data.message.header.status_code===404){
                const msg={
                    color: "#FFA500",
