@@ -20,7 +20,7 @@ module.exports={
                }
                return message.channel.send({embed : msg});
            }
-           message.channel.send(`Lyrics \n${lyrics}`).then((ms)=>{
+          return await message.channel.send(lyrics).then((ms)=>{
                ms.react('🧑‍🎤');
            }).catch((err)=>{
                console.log(err);

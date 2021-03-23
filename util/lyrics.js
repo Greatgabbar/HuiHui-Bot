@@ -14,7 +14,10 @@ module.exports = async (title)=>{
     await page.goto(`https://www.google.com/search?q=${title}+lyrics`);
     let search=await page.$('.SALvLe.farUxc.mJ2Mod');
     if(search===null){
-        const search2=await page.click('#wp-tabs-container g-text-expander');
+        let search2=null;
+        if(await page.$('#wp-tabs-container g-text-expander')){
+            search2=await page.click('#wp-tabs-container g-text-expander');
+        }
         if(search2===null){
             return null;
         }
