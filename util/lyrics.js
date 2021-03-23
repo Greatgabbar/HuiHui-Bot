@@ -20,11 +20,11 @@ module.exports = async (title)=>{
         }
         const res=await page.$('#wp-tabs-container')
         const title=await res.$$eval('.ujudUb span',options => options.map(option => option.textContent))
-        console.log(title.join('\n'));
+        // console.log(title.join('\n'));
         return title.join('\n');
     }
 
     const title1=await search.$$eval('.ujudUb span',options => options.map(option => option.textContent))
-    console.log(title1.join('\n'));
+    // console.log(title1.join('\n'));
     return title1.join('\n');
 };

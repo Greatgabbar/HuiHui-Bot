@@ -13,8 +13,6 @@ module.exports={
        }
        const track=message.client.player.nowPlaying(message);
        const lyrics=await findlyrics(track.title);
-       const arr = lyrics.match(/.{1,2048}/g); // Build the array
-
            if(lyrics===null){
                const msg={
                    color: "#FFA500",
@@ -22,13 +20,11 @@ module.exports={
                }
                return message.channel.send({embed : msg});
            }
-           for (let chunk of arr) { // Loop through every element
-            let msg={
-                color : '#FFA500',
-                title: "lyrics",
-                description: chunk,
-            }
-            await message.channel.send({ embed : msg }); // Wait for the embed to be sent
-          }
+           message.channel.send(`Lyrics \n${lyrics}`).then((ms)=>{
+               ms.react('🧑‍🎤');
+           }).catch((err)=>{
+               console.log(err);
+               return message.reply(`There is sme error in executing this command`);
+           });
     }
 }
