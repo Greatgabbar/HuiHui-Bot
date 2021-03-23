@@ -2,7 +2,8 @@ const puppeteer = require('puppeteer');
 module.exports = async (title)=>{
     const browser= await puppeteer.launch({
         headless:true,
-        args: ["--no-sandbox"]
+        args: ["--no-sandbox"],
+        ignoreDefaultArgs: ['--disable-extensions']
     });
     const page= await browser.newPage();
     await page.setViewport({
@@ -14,7 +15,7 @@ module.exports = async (title)=>{
     let search=await page.$('.SALvLe.farUxc.mJ2Mod');
     if(search===null){
         const search2=await page.click('#wp-tabs-container g-text-expander');
-        if(search===null){
+        if(search2===null){
             return null;
         }
         const res=await page.$('#wp-tabs-container')
