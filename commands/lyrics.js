@@ -1,6 +1,7 @@
 const ytdl = require('ytdl-core-discord');
 const fetch= require('node-fetch');
 const findlyrics=require('../util/lyrics');
+const { split } = require('ffmpeg-static');
 const key= process.env.KEY;
 module.exports={
     name : 'lyrics',
@@ -20,7 +21,12 @@ module.exports={
                }
                return message.channel.send({embed : msg});
            }
-          return await message.channel.send(lyrics).then((ms)=>{
+        //    const msg={
+        //     color: "#FFA500",
+        //     title : "Lyrics Not found",
+        //     discription : lyrics
+        // }
+          return await message.channel.send(lyrics,{split:true}).then((ms)=>{
                ms.react('🧑‍🎤');
            }).catch((err)=>{
                console.log(err);
