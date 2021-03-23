@@ -25,9 +25,10 @@ module.exports={
                title: "lyrics",
                description: lyrics,
            }
-           return message.channel.send({embed : msg}).then((ms)=>{
+           message.channel.send({embed : msg}).then((ms)=>{
                ms.react('🧑‍🎤');
            }).catch((err)=>{
+               console.log(err);
                return message.reply(`There is sme error in executing this command`);
            });
     }

@@ -14,6 +14,9 @@ module.exports = async (title)=>{
     let search=await page.$('.SALvLe.farUxc.mJ2Mod');
     if(search===null){
         const search2=await page.click('#wp-tabs-container g-text-expander');
+        if(search===null){
+            return null;
+        }
         const res=await page.$('#wp-tabs-container')
         const title=await res.$$eval('.ujudUb span',options => options.map(option => option.textContent))
         console.log(title.join('\n'));
