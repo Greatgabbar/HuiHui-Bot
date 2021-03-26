@@ -4,7 +4,7 @@ const User = require("../modals/user");
 module.exports={
     name : 'add',
     discription : 'Sets currently playing music duration',
-    usage : "!add/a <name> <link>",
+    usage : `${prefix}add/a <name> <link>`,
     execute(message,args){
     if(args.length <= 1){
         return message.reply(`Command usage ${this.usage}`);

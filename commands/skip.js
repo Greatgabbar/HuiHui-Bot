@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports={
     name : 'skip',
     discription : 'skip the Currently playing song',
-    usage : "!skip or !s",
+    usage : `${prefix}skip or ${prefix}s`,
     aliases:["s"],
     execute(message,args){
         if (!message.member.voice.channel) {

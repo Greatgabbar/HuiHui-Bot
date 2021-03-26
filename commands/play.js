@@ -3,7 +3,7 @@ const ytdl = require('ytdl-core-discord');
 module.exports={
     name : 'play',
     discription : 'play the perticular song in your voice channel',
-    usage : "!play <link>",
+    usage : `${prefix}play <link>`,
     aliases:["p"],
     execute : async (message,args,client)=>{
         if (!message.member.voice.channel) {

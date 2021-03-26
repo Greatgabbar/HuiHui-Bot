@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports={
     name : 'nowplaying',
     discription : 'status of Currently playing song',
-    usage : "!nowplaying or !np",
+    usage : `${prefix}nowplaying or !np`,
     aliases:["np"],
     execute(message,args){
         if (!message.member.voice.channel) {

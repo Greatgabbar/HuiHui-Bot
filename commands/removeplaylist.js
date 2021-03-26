@@ -4,7 +4,7 @@ const User = require("../modals/user");
 module.exports={
     name : 'removeplaylist',
     discription : 'Remove The Playlist',
-    usage : "!removeplaylist/rp <playlist name>",
+    usage : `${prefix}removeplaylist/rp <playlist name>`,
     aliases:["rp"],
     execute(message,args){
         if(args.length < 1){

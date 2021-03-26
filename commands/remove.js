@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports={
     name : 'remove',
     discription : 'remove the perticular song from queue',
-    usage : "!remove or !rm",
+    usage : `${prefix}remove or !rm`,
     aliases:["rm"],
     execute(message,args){
         if (!message.member.voice.channel) {

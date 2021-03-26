@@ -4,7 +4,7 @@ const User = require("../modals/user");
 module.exports={
     name : 'showplaylist',
     discription : 'Sets currently playing music duration',
-    usage : "!showplaylist/sp",
+    usage : `${prefix}showplaylist/sp`,
     aliases:["sp"],
     execute(message,args){
     User.findOne({id : message.author.id}).then((data)=>{

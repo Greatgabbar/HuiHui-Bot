@@ -4,7 +4,7 @@ const prefix=process.env.prefix;
 module.exports={
     name : 'help',
     discription : 'Show all the available commanads with discription',
-    usage : "!help",
+    usage : `${prefix}help`,
     aliases:["h"],
     execute(message,args){
         const data=[];

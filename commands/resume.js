@@ -1,7 +1,7 @@
 module.exports={
     name : 'resume',
     discription : 'To resume the music',
-    usage : "!resume",
+    usage : `${prefix}resume`,
     execute(message,args){
         if (!message.member.voice.channel) {
             return message.reply(`You Have to be in the voice channel to use this command !`);

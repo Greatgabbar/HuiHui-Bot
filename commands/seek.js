@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports={
     name : 'seek',
     discription : 'Sets currently playing music duration',
-    usage : "!seek <time>",
+    usage : `${prefix}seek <time>`,
     execute(message,args){
         if (!message.member.voice.channel) {
             return message.reply(`You Have to be in the voice channel to use this command !`);

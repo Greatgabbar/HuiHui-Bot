@@ -6,7 +6,7 @@ const key= process.env.KEY;
 module.exports={
     name : 'lyrics',
     discription : 'send the lyrics of current playing song',
-    usage : "!lyrics",
+    usage : `${prefix}lyrics`,
     aliases:["l"],
     execute : async (message,args)=>{
         if (!message.member.voice.channel) {

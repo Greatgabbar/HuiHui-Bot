@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports={
     name : 'clearqueue',
     discription : 'Clear the queue',
-    usage : "!clearqueue or !cq",
+    usage : `${prefix}clearqueue or !cq`,
     aliases:["cq"],
     execute(message,args){
         if (!message.member.voice.channel) {

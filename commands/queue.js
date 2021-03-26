@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports={
     name : 'queue',
     discription : 'Show the queue',
-    usage : "!queue",
+    usage : `${prefix}queue`,
     aliases:["q"],
     execute(message,args){
         if (!message.member.voice.channel) {

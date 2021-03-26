@@ -4,7 +4,7 @@ const User = require('../modals/user');
 module.exports={
     name : 'playplaylist',
     discription : 'play the perticular saved playplaylist in your voice channel',
-    usage : "!playplaylist/pp <playlist name>",
+    usage : `${prefix}playplaylist/pp <playlist name>`,
     aliases:["pp"],
     execute : async (message,args)=>{
         if (!message.member.voice.channel) {

@@ -1,7 +1,7 @@
 module.exports={
     name : 'kick',
     discription : 'Kick the user u mention',
-    usage : "!kick <user>",
+    usage : `${prefix}kick <user>`,
     execute(message,args){
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);

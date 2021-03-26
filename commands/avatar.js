@@ -1,7 +1,7 @@
 module.exports={
     name : 'avatar',
     discription : 'Show the avatar of tagged users',
-    usage : "!avatar <users>",
+    usage : `${prefix}avatar <users>`,
     cooldown : 5,
     execute(message,args){
         if (!message.mentions.users.size) {

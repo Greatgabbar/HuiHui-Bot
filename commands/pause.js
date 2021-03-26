@@ -1,7 +1,7 @@
 module.exports={
     name : 'pause',
     discription : 'To pause the music',
-    usage : "!pause",
+    usage : `${prefix}pause`,
     execute(message,args){
         if (!message.member.voice.channel) {
             return message.reply(`You Have to be in the voice channel to use this command !`);
