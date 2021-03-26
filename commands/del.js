@@ -1,3 +1,5 @@
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'del',
     discription : 'Delete the message you want to enter',

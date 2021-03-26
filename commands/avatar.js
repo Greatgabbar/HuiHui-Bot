@@ -1,3 +1,5 @@
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'avatar',
     discription : 'Show the avatar of tagged users',

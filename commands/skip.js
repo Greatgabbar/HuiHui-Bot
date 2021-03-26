@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'skip',
     discription : 'skip the Currently playing song',

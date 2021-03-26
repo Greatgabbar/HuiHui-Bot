@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const User = require("../modals/user");
-
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'removeplaylist',
     discription : 'Remove The Playlist',

@@ -2,7 +2,8 @@ const ytdl = require('ytdl-core-discord');
 const fetch= require('node-fetch');
 const findlyrics=require('../util/lyrics');
 const { split } = require('ffmpeg-static');
-const key= process.env.KEY;
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'lyrics',
     discription : 'send the lyrics of current playing song',

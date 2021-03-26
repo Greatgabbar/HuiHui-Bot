@@ -1,3 +1,6 @@
+require('dotenv').config();
+const prefix = process.env.prefix;
+
 module.exports={
     name : 'ping',
     discription : 'My bot ping status',

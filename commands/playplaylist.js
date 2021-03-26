@@ -1,6 +1,7 @@
 const ytdl = require('ytdl-core-discord');
 const User = require('../modals/user');
-
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'playplaylist',
     discription : 'play the perticular saved playplaylist in your voice channel',

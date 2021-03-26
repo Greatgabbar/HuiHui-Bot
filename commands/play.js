@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core-discord');
-
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'play',
     discription : 'play the perticular song in your voice channel',

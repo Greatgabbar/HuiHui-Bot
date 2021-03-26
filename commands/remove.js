@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'remove',
     discription : 'remove the perticular song from queue',

@@ -1,3 +1,5 @@
+require('dotenv').config();
+const prefix = process.env.prefix;
 module.exports={
     name : 'resume',
     discription : 'To resume the music',
