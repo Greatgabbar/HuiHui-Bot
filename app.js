@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const http=require('http');
 const client = new Discord.Client();
 const {Player}=require('discord-player');
-client.player =  new Player(client);
+client.player =  new Player(client,{leaveOnEnd:false,leaveOnEndCooldown:60000});
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 require('dotenv').config();
