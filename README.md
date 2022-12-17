@@ -14,6 +14,11 @@
   <a href="#-license">License</a>
 </p>
 
+## Methodology 
+<h1 align="center">
+    <img alt="methodology" src="./mat.png" width="400px" /> 
+</h1>
+
 ## 💻 What The Heck is HuiHui
 
 - <p style="color: red;">HuiHui is a free Discord music bot written in js using discord.js that delivers high-quality music to your Discord server. The music bot is made to be easy plug in to your Discord server with no configuration. And you can save your playlist link with bot and no need to add manually evrytime, just add it once and you are done.
@@ -48,6 +53,9 @@ debug, see number of voice connections.
 - ffmpeg
 - ytdl-core
 - sodium
+
+## Live Link
+ live link :- https://discord.com/oauth2/authorize?client_id=816994233557844039&scope=bot
 
 ## 💻 Getting started
 
@@ -118,6 +126,12 @@ $ git push origin my-feature
 ```
 
 After your pull request is merged, you can delete your branch
+
+## ScreenShot of Interface
+<h1 align="center">
+    <img alt="Logo" src="./SS.png" width="300px" /> 
+    <img alt="Logo" src="./HUIHUIINTRO.png" width="206px" /> 
+</h1>
 
 ## 📝 License
 
