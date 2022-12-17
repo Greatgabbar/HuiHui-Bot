@@ -129,7 +129,7 @@ After your pull request is merged, you can delete your branch
 
 ## ScreenShot of Interface
 <h1 align="center">
-    <img alt="Logo" src="./SS.png" width="300px" /> 
+    <img alt="Logo" src="./ss.png" width="300px" /> 
     <img alt="Logo" src="./HUIHUIINTRO.png" width="206px" /> 
 </h1>
 
